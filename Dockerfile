@@ -7,15 +7,16 @@ FROM ubuntu:15.10
 RUN apt-get update && apt-get install -y python python-pip python-setuptools \
     python-dev python-distribute python-virtualenv
 
-#=================================
-# Install Bash Command Line Tools
-#=================================
+#=========================================
+# Install Bash Command Line Tools and Git
+#=========================================
 RUN apt-get -qy --no-install-recommends install \
     sudo \
     unzip \
     wget \
     curl \
     vim \
+    git-core \
   && rm -rf /var/lib/apt/lists/*
 
 #========================================
@@ -36,7 +37,7 @@ RUN locale-gen ${LANGUAGE} \
 #==============================
 # Set up TensorFlow / TensorPy
 #==============================
-COPY docker/docker_install_tensorflow.sh /TensorPy/docker_install_tensorflow.sh
+COPY docker/docker_install.sh /TensorPy/docker_install.sh
 COPY download_imagenet.py /TensorPy/download_imagenet.py
 COPY classify.py /TensorPy/classify.py
 COPY requirements.txt /TensorPy/
@@ -47,7 +48,7 @@ COPY sample_images /TensorPy/sample_images/
 COPY test_classify_image.sh /TensorPy/
 COPY docker /TensorPy/docker/
 COPY docker/run_docker_test.sh /TensorPy/
-RUN cd /TensorPy && ls && ./docker/docker_install_tensorflow.sh
+RUN cd /TensorPy && ls && ./docker/docker_install.sh
 RUN cd /TensorPy && pip install -r requirements.txt
 
 #===================
