@@ -55,6 +55,6 @@ cd examples
 ./run_test_classify.sh
 ```
 
-### Part II:
+### ________
 
 To see other exciting GitHub projects, check out [my GitHub page](https://github.com/mdmintz/).
