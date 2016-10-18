@@ -53,4 +53,3 @@ cd examples
 ### ________
 
 For more exciting GitHub projects, such as [SeleniumBase](http://seleniumbase.com), check out [my GitHub page](https://github.com/mdmintz/).
-- Michael Mintz
