@@ -11,11 +11,12 @@ from __future__ import print_function
 import os
 import re
 import numpy as np
+from tensorpy import constants
 import tensorflow as tf
 
 FLAGS = tf.app.flags.FLAGS
 tf.app.flags.DEFINE_string(
-    'model_dir', '/tmp/imagenet',
+    'model_dir', constants.IMAGENET_FOLDER,
     """Path to classify_image_graph_def.pb, """
     """imagenet_synset_to_human_label_map.txt, and """
     """imagenet_2012_challenge_label_map_proto.pbtxt.""")
