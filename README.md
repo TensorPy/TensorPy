@@ -40,13 +40,13 @@ python setup.py install
 Classify a single image from a URL, example:
 
 ```bash
-python classify.py http://theonlinezoo.com/img/04/toz04142l.jpg
+python classify.py "https://raw.githubusercontent.com/mdmintz/TensorPy/master/sample_images/happy_animal.jpg"
 ```
 
 Classify all images on a web page, example:
 
 ```bash
-python classify.py http://www.theonlinezoo.com/pages/themes_south_american_animals.html
+python classify.py "https://github.com/mdmintz/TensorPy/tree/master/sample_images"
 ```
 
 Classifying an image from a URL from within a Python program. See [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py) to see the code.

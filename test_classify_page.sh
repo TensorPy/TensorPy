@@ -1,1 +1,1 @@
-python classify.py "http://theonlinezoo.com/pages/themes_south_american_animals.html"
+python classify.py "https://github.com/mdmintz/TensorPy/tree/master/sample_images"

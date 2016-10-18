@@ -1,1 +1,1 @@
-python classify.py "http://theonlinezoo.com/img/04/toz04142l.jpg"
+python classify.py "https://raw.githubusercontent.com/mdmintz/TensorPy/master/sample_images/happy_animal.jpg"
