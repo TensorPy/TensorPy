@@ -23,7 +23,7 @@ cd TensorPy
 
 #### **Step 3:** Install TensorPy, TensorFlow, and ImageNet
 
-One script installs them all. (See [install.sh](https://github.com/mdmintz/TensorPy/blob/master/install_tensorflow.sh) for details.)
+One script installs them all. (See [install.sh](https://github.com/mdmintz/TensorPy/blob/master/install.sh) for details.)
 
 ```bash
 ./install.sh
