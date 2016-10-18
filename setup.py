@@ -1,7 +1,7 @@
 """
-The setup package to install TensorPy dependencies
-*> This does NOT include TensorFlow installation
-*> To install TensorFlow, use "./install_tensorflow.sh"
+The setup package to install TensorPy dependencies.
+*> This does NOT include TensorFlow installation.
+*> To install TensorFlow, use "./install.sh"
 """
 
 from setuptools import setup, find_packages  # noqa
