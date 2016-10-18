@@ -85,7 +85,7 @@ if __name__ == "__main__":
         elif content_type == 'html':
             image_list = image_base.get_all_images_on_page(url)
 
-            if 'linux2' not in sys.platform or constants.MAX_THREADS <= 1:
+            if 'linux2' not in sys.platform and constants.MAX_THREADS > 1:
                 # Multi-threading the work when not using Docker Linux
                 pool = ThreadPool(constants.MAX_THREADS)
                 results_list = pool.map(
@@ -111,11 +111,6 @@ if __name__ == "__main__":
                         print best_guess
                         if images_classified >= constants.MAX_IMAGES_PER_PAGE:
                             break
-
-            valid_results = []
-            for result in results_list:
-                if result is not None:
-                    valid_results.append(result)
 
             if images_classified >= constants.MAX_IMAGES_PER_PAGE:
                     print("\n(NOTE: Exceeded page classification limit "

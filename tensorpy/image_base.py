@@ -58,7 +58,7 @@ def get_all_images_on_page(page_url):
     html = requests.get(page_url)
     completed_source = web_core.rebuild_source(html.text, full_base_url)
     soup = BeautifulSoup(completed_source)
-    imgs = soup.fetch('img', src=True)
+    imgs = soup.fetch('img', src=True, onload=None)
     image_url_list = []
     for img in imgs:
         link = img["src"].split("src=")[-1]
