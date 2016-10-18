@@ -62,6 +62,7 @@ def get_all_images_on_page(page_url):
     image_url_list = []
     for img in imgs:
         link = img["src"].split("src=")[-1]
+        link = link.split('?')[0]
         if (link.endswith('.png') or link.endswith('.jpg')
                 or link.endswith('.jpeg')):
             if not link.startswith("http"):
