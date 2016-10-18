@@ -1,4 +1,5 @@
 # TensorPy
+[![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy)
 
 **The fast & easy way to get started with TensorFlow in Python**
 
