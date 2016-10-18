@@ -43,7 +43,7 @@ Classify all images on a web page, example:
 python classify.py http://www.theonlinezoo.com/pages/themes_south_american_animals.html
 ```
 
-Classifying an image from a URL from within a Python program, example (from [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py):
+Classifying an image from a URL from within a Python program. See [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py) to see the code.
 
 ```bash
 cd examples
