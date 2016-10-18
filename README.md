@@ -3,10 +3,10 @@
 
 **The fast & easy way to get started with TensorFlow in Python**
 
-TensorPy makes it easier to install and use TensorFlow, Google's machine-learning library. TensorPy allows you to quickly classify images and entire web pages directly from the web so that you don't have to worry about downloading and managing image files.
+TensorPy makes it easier to install and use [TensorFlow](https://www.tensorflow.org/). Use TensorPy to classify multiple images directly from the web without having to download and manage image files manually.
 
 
-### Part I: Setup Instructions for Mac and Ubuntu/Linux
+### Setup Instructions for Mac and Ubuntu/Linux
 
 (**Windows & Docker users**: See the [Docker ReadMe](https://github.com/mdmintz/TensorPy/blob/master/docker/ReadMe.md) for running on a Docker machine. Windows requires Docker to run TensorFlow.)
 
@@ -21,35 +21,29 @@ git clone https://github.com/mdmintz/TensorPy.git
 cd TensorPy
 ```
 
-#### **Step 3:** Install TensorFlow and dependancies
+#### **Step 3:** Install TensorPy, TensorFlow, and ImageNet
 
-It's now just one line of code (see [install_tensorflow.sh](https://github.com/mdmintz/TensorPy/blob/master/install_tensorflow.sh)) to install TensorFlow on your Mac or Linux machine, with all required dependancies, which includes the Imagenet database for classifying images using machine learning.
-
-```bash
-./install_tensorflow.sh
-```
-
-#### **Step 4:** Install TensorPy
+One script installs them all. (See [install.sh](https://github.com/mdmintz/TensorPy/blob/master/install_tensorflow.sh) for details.)
 
 ```bash
-python setup.py install
+./install.sh
 ```
 
-#### **Step 5:** Run the examples
+#### **Step 4:** Run the examples
 
-Classify a single image from a URL, example:
+Classify a single image from a URL:
 
 ```bash
 python classify.py "https://raw.githubusercontent.com/mdmintz/TensorPy/master/sample_images/happy_animal.jpg"
 ```
 
-Classify all images on a web page, example:
+Classify all images on a web page:
 
 ```bash
 python classify.py "https://github.com/mdmintz/TensorPy/tree/master/sample_images"
 ```
 
-Classifying an image from a URL from within a Python program. See [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py) to see the code.
+Classify a single image from a URL from within a Python program: (See [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py) for details.)
 
 ```bash
 cd examples
@@ -59,3 +53,4 @@ cd examples
 ### ________
 
 To see other exciting GitHub projects, check out [my GitHub page](https://github.com/mdmintz/).
+~ Michael Mintz
