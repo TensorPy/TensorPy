@@ -52,5 +52,5 @@ cd examples
 
 ### ________
 
-To see other exciting GitHub projects, check out [my GitHub page](https://github.com/mdmintz/).
-~ Michael Mintz
+For more exciting GitHub projects, such as [SeleniumBase](http://seleniumbase.com), check out [my GitHub page](https://github.com/mdmintz/).
+- Michael Mintz
