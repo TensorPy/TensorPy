@@ -1,6 +1,9 @@
 # TensorPy
 
-**The fast & easy way to get started with TensorFlow machine learning in Python**
+**The fast & easy way to get started with TensorFlow in Python**
+
+TensorPy simplifies both installation and usage of TensorFlow so that you can get started with machine learning projects right away. TensorPy comes with a Python library that allows you to classify images directly from the web so that you don't have to worry about downloading and managing image files. There's even a built-in library to locate all images on a web page and classify them all at once.
+
 
 ### Part I: Setup Instructions for Mac and Ubuntu/Linux
 
@@ -18,6 +21,8 @@ cd TensorPy
 ```
 
 #### **Step 3:** Install TensorFlow and dependancies
+
+It's now just one line of code (see [install_tensorflow.sh](https://github.com/mdmintz/TensorPy/blob/master/install_tensorflow.sh)) to install TensorFlow on your Mac or Linux machine, with all required dependancies, which includes the Imagenet database for classifying images using machine learning.
 
 ```bash
 ./install_tensorflow.sh
