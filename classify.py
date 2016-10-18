@@ -4,7 +4,7 @@ import threading
 import uuid
 from multiprocessing.dummy import Pool as ThreadPool
 from tensorpy import classify_image
-from tensorpy import constants
+from tensorpy import settings
 from tensorpy import image_base
 from tensorpy import web_core
 
@@ -16,9 +16,9 @@ images_classified = 0
 
 def download_and_classify_image(image_url):
     global images_classified
-    if images_classified >= constants.MAX_IMAGES_PER_PAGE:
+    if images_classified >= settings.MAX_IMAGES_PER_PAGE:
         return None
-    downloads_folder = constants.DOWNLOADS_FOLDER
+    downloads_folder = settings.DOWNLOADS_FOLDER
 
     # Prevent file conflicts by using unique identifiers
     hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
@@ -40,7 +40,7 @@ def download_and_classify_image(image_url):
     width, height = image_base.get_image_file_dimensions(
         "%s/%s" % (downloads_folder, hex_name_jpg))
     best_guess = None
-    if width >= constants.MIN_W_H and height >= constants.MIN_W_H:
+    if width >= settings.MIN_W_H and height >= settings.MIN_W_H:
         best_guess = classify_image.external_run(
             "%s/%s" % (downloads_folder, hex_name_jpg))
         lock1.acquire()
@@ -85,9 +85,9 @@ if __name__ == "__main__":
         elif content_type == 'html':
             image_list = image_base.get_all_images_on_page(url)
 
-            if 'linux2' not in sys.platform and constants.MAX_THREADS > 1:
+            if 'linux2' not in sys.platform and settings.MAX_THREADS > 1:
                 # Multi-threading the work when not using Docker Linux
-                pool = ThreadPool(constants.MAX_THREADS)
+                pool = ThreadPool(settings.MAX_THREADS)
                 results_list = pool.map(
                     download_and_classify_image, image_list)
                 pool.close()
@@ -109,18 +109,18 @@ if __name__ == "__main__":
                                   " ***")
                         images_classified += 1
                         print best_guess
-                        if images_classified >= constants.MAX_IMAGES_PER_PAGE:
+                        if images_classified >= settings.MAX_IMAGES_PER_PAGE:
                             break
 
-            if images_classified >= constants.MAX_IMAGES_PER_PAGE:
+            if images_classified >= settings.MAX_IMAGES_PER_PAGE:
                     print("\n(NOTE: Exceeded page classification limit "
                           "of %d images per URL! Stopping early.)" % (
-                            constants.MAX_IMAGES_PER_PAGE))
+                            settings.MAX_IMAGES_PER_PAGE))
 
             if images_classified == 0:
                 print("\nCould not find images to classify on the page! "
                       "(Min size = %dx%d)" % (
-                        constants.MIN_W_H, constants.MIN_W_H))
+                        settings.MIN_W_H, settings.MIN_W_H))
             print("")
         else:
             raise Exception(

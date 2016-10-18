@@ -5,7 +5,7 @@ from BeautifulSoup import BeautifulSoup
 from PIL import Image
 from StringIO import StringIO
 from tensorpy import classify_image
-from tensorpy import constants
+from tensorpy import settings
 from tensorpy import web_core
 
 
@@ -40,7 +40,7 @@ def get_image_dimensions(image):
 
 def has_minimum_image_dimensions(image):
     width, height = get_image_dimensions(image)
-    if width >= constants.MIN_W_H and height >= constants.MIN_W_H:
+    if width >= settings.MIN_W_H and height >= settings.MIN_W_H:
         return True
     else:
         return False
@@ -76,7 +76,7 @@ def get_all_images_on_page(page_url):
 
 
 def get_image_classification(image_url):
-    downloads_folder = constants.DOWNLOADS_FOLDER
+    downloads_folder = settings.DOWNLOADS_FOLDER
     hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'

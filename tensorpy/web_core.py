@@ -1,7 +1,7 @@
 import os
 import re
 import requests
-from tensorpy import constants
+from tensorpy import settings
 
 
 def is_valid_url(url):
@@ -47,7 +47,7 @@ def download_file(file_url, destination_folder=None):
     """ Downloads the file from the url to the destination folder.
         If no destination folder is specified, the default one is used. """
     if not destination_folder:
-        destination_folder = constants.DOWNLOADS_FOLDER
+        destination_folder = settings.DOWNLOADS_FOLDER
         if not os.path.exists(destination_folder):
             os.makedirs(destination_folder)
     _download_file_to(file_url, destination_folder)
@@ -57,7 +57,7 @@ def save_file_as(file_url, new_file_name, destination_folder=None):
     """ Similar to self.download_file(), except that you get to rename the
         file being downloaded to whatever you want. """
     if not destination_folder:
-        destination_folder = constants.DOWNLOADS_FOLDER
+        destination_folder = settings.DOWNLOADS_FOLDER
         if not os.path.exists(destination_folder):
             os.makedirs(destination_folder)
     _download_file_to(
