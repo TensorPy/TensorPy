@@ -1,0 +1,1 @@
+python classify.py "http://theonlinezoo.com/img/04/toz04142l.jpg"
