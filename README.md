@@ -2,7 +2,7 @@
 
 **The fast & easy way to get started with TensorFlow in Python**
 
-TensorPy simplifies both installation and usage of TensorFlow so that you can get started with machine learning projects right away. TensorPy comes with a Python library that allows you to classify images directly from the web so that you don't have to worry about downloading and managing image files. There's even a built-in library to locate all images on a web page and classify them all at once.
+TensorPy simplifies both the installation and usage of TensorFlow so that you can get started with machine learning projects right away. TensorPy comes with a Python library that allows you to classify images directly from the web so that you don't have to worry about downloading and managing image files. There's even a built-in library to locate all images on a web page and classify them together.
 
 
 ### Part I: Setup Instructions for Mac and Ubuntu/Linux
