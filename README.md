@@ -1,9 +1,9 @@
 # TensorPy
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy)
 
-**The fast & easy way to get started with TensorFlow in Python**
+**Making TensorFlow easier to use with Python**
 
-TensorPy makes it easier to install and use [TensorFlow](https://www.tensorflow.org/). Use TensorPy to classify multiple images directly from the web without having to download and manage image files manually.
+You can use TensorPy to classify images by simply passing a URL. [TensorFlow](https://www.tensorflow.org/) image recognition does the hard work.
 
 
 ### Setup Instructions for Mac and Ubuntu/Linux
