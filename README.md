@@ -3,14 +3,14 @@
 
 **The fast & easy way to get started with TensorFlow in Python**
 
-TensorPy simplifies both the installation and usage of TensorFlow so that you can get started with machine learning projects right away. TensorPy comes with a Python library that allows you to classify images directly from the web so that you don't have to worry about downloading and managing image files. There's even a built-in library to locate all images on a web page and classify them together.
+TensorPy makes it easier to install and use TensorFlow, Google's machine-learning library. TensorPy allows you to quickly classify images and entire web pages directly from the web so that you don't have to worry about downloading and managing image files.
 
 
 ### Part I: Setup Instructions for Mac and Ubuntu/Linux
 
 (**Windows & Docker users**: See the [Docker ReadMe](https://github.com/mdmintz/TensorPy/blob/master/docker/ReadMe.md) for running on a Docker machine. Windows requires Docker to run TensorFlow.)
 
-#### **Step 1:** Create/activate a virtual environment named ``tensorpy``
+#### **Step 1:** Create and activate a virtual environment named "tensorpy"
 
 If you're not sure how to create a virtual environment, **[follow these instructions](https://github.com/mdmintz/TensorPy/blob/master/help_docs/virtualenv_instructions.md)** to learn how.
 
