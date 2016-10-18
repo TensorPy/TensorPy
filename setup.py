@@ -13,7 +13,7 @@ setup(
     author='Michael Mintz',
     author_email='@mintzworld',
     maintainer='Michael Mintz',
-    description='The fast & easy way to get started with Tensorflow',
+    description='Making TensorFlow easier to use with Python',
     license='The MIT License',
     install_requires=[
         'requests==2.11.1',
