@@ -20,6 +20,11 @@ setup(
         'six==1.10.0',
         'Pillow==3.4.1',
         'BeautifulSoup==3.2.1',
-        ],
+    ],
     packages=['tensorpy'],
-    )
+    entry_points={
+        'console_scripts': [
+            'classify = tensorpy.classify:main',
+        ],
+    },
+)
