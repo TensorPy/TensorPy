@@ -1,7 +1,7 @@
 # TensorPy
 ![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_p.png "TensorPy")
 
-[![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/seleniumbase/SeleniumBase/blob/master/LICENSE)
+[![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/mdmintz/TensorPy/blob/master/LICENSE)
 
 **Making TensorFlow easier to use with Python**
 
@@ -51,7 +51,3 @@ Classify a single image from a URL from within a Python program: (See [test_clas
 cd examples
 ./run_test_classify.sh
 ```
-
-### ________
-
-For more exciting GitHub projects, such as [SeleniumBase](http://seleniumbase.com), check out [my GitHub page](https://github.com/mdmintz/).
