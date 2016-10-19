@@ -17,7 +17,7 @@ images_classified = 0
 def download_and_classify_image(image_url):
     global images_classified
     if images_classified >= settings.MAX_IMAGES_PER_PAGE:
-        return None
+        return
     downloads_folder = settings.DOWNLOADS_FOLDER
 
     # Prevent file conflicts by using unique identifiers
@@ -59,15 +59,13 @@ def download_and_classify_image(image_url):
               downloads_folder + "/temp_image_jpg.jpg")
     lock3.release()
 
-    return best_guess
 
-
-if __name__ == "__main__":
-    expected_arg = "[PAGE(HTML) URL <OR> IMAGE(JPG/PNG) URL]"
+def main():
+    expected_arg = "[PAGE_URL or IMAGE_URL]"
     num_args = len(sys.argv)
     if num_args < 2 or num_args > 2:
-        print "Invalid Run Command! Usage:"
-        print "python classify.py %s" % expected_arg
+        print "\n* INVALID RUN COMMAND! *  Usage:"
+        print "classify %s\n" % expected_arg
     elif num_args == 2:
         url = sys.argv[1]
         valid_url = web_core.is_valid_url(url)
@@ -83,13 +81,13 @@ if __name__ == "__main__":
             print(best_guess)
             print("")
         elif content_type == 'html':
+            global images_classified
             image_list = image_base.get_all_images_on_page(url)
 
             if 'linux2' not in sys.platform and settings.MAX_THREADS > 1:
                 # Multi-threading the work when not using Docker Linux
                 pool = ThreadPool(settings.MAX_THREADS)
-                results_list = pool.map(
-                    download_and_classify_image, image_list)
+                pool.map(download_and_classify_image, image_list)
                 pool.close()
                 pool.join()
             else:
@@ -125,3 +123,6 @@ if __name__ == "__main__":
         else:
             raise Exception(
                 "Unexpected content type %s. Fix the code!" % content_type)
+
+if __name__ == "__main__":
+    main()
