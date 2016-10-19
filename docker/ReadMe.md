@@ -14,7 +14,7 @@
 
     eval "$(docker-machine env tensorpy)"
 
-#### 4. Go to the TensorPy home directory on the command line, which is where [Dockerfile](https://github.com/mdmintz/TensorPy/blob/master/Dockerfile) is located. (This assumes you've already cloned the TensorPy repo.)
+#### 4. Go to the TensorPy home directory on the command line, which is where [Dockerfile](https://github.com/TensorPy/TensorPy/blob/master/Dockerfile) is located. (This assumes you've already cloned the TensorPy repo.)
 
 #### 5. Create your Docker image from your Dockerfile: (Get ready to wait awhile)
 
