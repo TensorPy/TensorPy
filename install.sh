@@ -15,8 +15,8 @@ then
   export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.10.0-py2-none-any.whl
   pip install $TF_BINARY_URL
 else
-  echo "Incompatible machine for Tensorflow. Exiting script..."
+  echo "Incompatible machine for TensorFlow. Exiting script..."
 fi
 echo "Downloading ImageNet (image database for classifying images)..."
-python download_imagenet.py
+python tensorpy/download_imagenet.py
 exit
