@@ -36,18 +36,18 @@ One script installs them all. (See [install.sh](https://github.com/mdmintz/Tenso
 Classify a single image from a URL:
 
 ```bash
-python classify.py "https://raw.githubusercontent.com/mdmintz/TensorPy/master/sample_images/happy_animal.jpg"
+classify "https://raw.githubusercontent.com/mdmintz/TensorPy/master/sample_images/happy_animal.jpg"
 ```
 
 Classify all images on a web page:
 
 ```bash
-python classify.py "https://github.com/mdmintz/TensorPy/tree/master/sample_images"
+classify "https://github.com/mdmintz/TensorPy/tree/master/sample_images"
 ```
 
-Classify a single image from a URL from within a Python program: (See [test_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_classify.py) for details.)
+Classify a single image from a URL from within a Python program: (See [test_python_classify.py](https://github.com/mdmintz/TensorPy/blob/master/examples/test_python_classify.py) for details.)
 
 ```bash
 cd examples
-./run_test_classify.sh
+python test_python_classify.py
 ```
