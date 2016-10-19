@@ -1,4 +1,5 @@
 # TensorPy
+![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_p.png "TensorPy")
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy)
 
 **Making TensorFlow easier to use with Python**
