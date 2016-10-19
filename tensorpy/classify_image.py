@@ -1,9 +1,6 @@
-"""
-Simple image classification with Inception.
-This is a modified version of the following file:
-https://github.com/tensorflow/tensorflow/blob/master
-        /tensorflow/models/image/imagenet/classify_image.py
-"""
+""" Simple image classification with Inception. """
+# This is a modified version of the following file:
+# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/models/image/imagenet/classify_image.py  # noqa
 
 from __future__ import absolute_import
 from __future__ import division

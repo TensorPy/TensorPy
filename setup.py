@@ -8,7 +8,7 @@ from setuptools import setup, find_packages  # noqa
 
 setup(
     name='tensorpy',
-    version='1.0.3',
+    version='1.0.4',
     url='http://tensorpy.com',
     author='Michael Mintz',
     author_email='@mintzworld',
@@ -20,6 +20,11 @@ setup(
         'six==1.10.0',
         'Pillow==3.4.1',
         'BeautifulSoup==3.2.1',
-        ],
+    ],
     packages=['tensorpy'],
-    )
+    entry_points={
+        'console_scripts': [
+            'classify = tensorpy.classify:main',
+        ],
+    },
+)
