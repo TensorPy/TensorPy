@@ -1,1 +1,1 @@
-classify "https://raw.githubusercontent.com/TensorPy/TensorPy/master/sample_images/happy_animal.jpg"
+classify "https://raw.githubusercontent.com/TensorPy/TensorPy/master/examples/images/happy_animal.jpg"
