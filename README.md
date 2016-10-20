@@ -3,14 +3,18 @@
 
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/TensorPy/TensorPy/blob/master/LICENSE) [![Join the chat at https://gitter.im/TensorPy/Lobby](https://badges.gitter.im/TensorPy/TensorPy.svg)](https://gitter.im/TensorPy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**Making TensorFlow easier to use with Python**
+**Image Classification with TensorFlow made easy!**
 
-You can use TensorPy to classify images by simply passing a URL. [TensorFlow](https://www.tensorflow.org/) image recognition does the hard work.
+You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python program. **[TensorFlow](https://www.tensorflow.org/)** does all the image-recognition work.
+
+TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** for details).
+
+See **[help_docs/how_tensorpy_works.md](https://github.com/TensorPy/TensorPy/blob/master/help_docs/how_tensorpy_works.md)** for a detailed explanation of how TensorPy works.
 
 
-### Setup Instructions for Mac and Ubuntu/Linux
+## Setup Steps for Mac & Ubuntu/Linux
 
-(**Windows & Docker users**: See the [Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/docker/ReadMe.md) for running on a Docker machine. Windows requires Docker to run TensorFlow.)
+(**Windows & Docker users**: See the **[Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/third_party/docker/ReadMe.md)** for running on a Docker machine. Windows requires Docker to run TensorFlow.)
 
 #### **Step 1:** Create and activate a virtual environment named "tensorpy"
 
@@ -23,9 +27,9 @@ git clone https://github.com/TensorPy/TensorPy.git
 cd TensorPy
 ```
 
-#### **Step 3:** Install TensorPy, TensorFlow, and ImageNet
+#### **Step 3:** Install TensorPy, TensorFlow, and ImageNet/Inception
 
-One script installs them all. (See [install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh) for details.)
+The **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** script installs everything you need:
 
 ```bash
 ./install.sh
@@ -36,18 +40,24 @@ One script installs them all. (See [install.sh](https://github.com/TensorPy/Tens
 Classify a single image from a URL:
 
 ```bash
-classify "https://raw.githubusercontent.com/TensorPy/TensorPy/master/sample_images/happy_animal.jpg"
+classify "https://raw.githubusercontent.com/TensorPy/TensorPy/master/examples/images/happy_animal.jpg"
 ```
 
 Classify all images on a web page:
 
 ```bash
-classify "https://github.com/TensorPy/TensorPy/tree/master/sample_images"
+classify "https://github.com/TensorPy/TensorPy/tree/master/examples/images"
 ```
 
-Classify a single image from a URL from within a Python program: (See [test_python_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_classify.py) for details.)
+Classify a single image from a URL from within a Python program: (See **[test_python_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_classify.py)** for details.)
 
 ```bash
 cd examples
 python test_python_classify.py
 ```
+
+____________
+
+### Future Work:
+
+Eventually, the headline will change from "Image Classification with TensorFlow made easy!" to "Machine Learning with TensorFlow made easy!" once I expand on TensorPy to make other features of TensorFlow easier too. Stay tuned for updates!

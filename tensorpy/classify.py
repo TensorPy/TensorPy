@@ -61,7 +61,7 @@ def download_and_classify_image(image_url):
 
 
 def main():
-    expected_arg = "[PAGE_URL or IMAGE_URL]"
+    expected_arg = "[A valid PAGE_URL or IMAGE_URL]"
     num_args = len(sys.argv)
     if num_args < 2 or num_args > 2:
         print "\n* INVALID RUN COMMAND! *  Usage:"
