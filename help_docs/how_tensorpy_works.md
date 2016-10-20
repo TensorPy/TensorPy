@@ -6,4 +6,4 @@ If the "classify" command is called with a web page as input, then all images on
 
 You can also use TensorPy to classify images from within a Python program. (See the example to learn how: **[examples/test_python_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_classify.py)**)
 
-If you make any changes to **[tensorpy/settings.py](https://github.com/TensorPy/TensorPy/blob/master/tensorpy/settings.py), you will need to rerun "python setup.py install" for your changes to take effect.
+If you make any changes to **[tensorpy/settings.py](https://github.com/TensorPy/TensorPy/blob/master/tensorpy/settings.py)**, you will need to rerun "python setup.py install" for your changes to take effect.
