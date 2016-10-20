@@ -8,5 +8,5 @@ echo "Initializing TensorFlow setup on an Ubuntu Docker machine..."
 export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.10.0-cp27-none-linux_x86_64.whl
 pip install $TF_BINARY_URL
 echo "Downloading ImageNet (image database for classifying images)..."
-python download_imagenet.py
+python tensorpy/download_imagenet.py
 exit

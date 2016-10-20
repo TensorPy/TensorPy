@@ -14,7 +14,7 @@ See **[help_docs/how_tensorpy_works.md](https://github.com/TensorPy/TensorPy/blo
 
 ## Setup Steps for Mac & Ubuntu/Linux
 
-(**Windows & Docker users**: See the **[Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/docker/ReadMe.md)** for running on a Docker machine. Windows requires Docker to run TensorFlow.)
+(**Windows & Docker users**: See the **[Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/third_party/docker/ReadMe.md)** for running on a Docker machine. Windows requires Docker to run TensorFlow.)
 
 #### **Step 1:** Create and activate a virtual environment named "tensorpy"
 

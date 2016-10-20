@@ -37,23 +37,19 @@ RUN locale-gen ${LANGUAGE} \
 #==============================
 # Set up TensorFlow / TensorPy
 #==============================
-COPY docker/docker_install.sh /TensorPy/docker_install.sh
-COPY download_imagenet.py /TensorPy/download_imagenet.py
-COPY classify.py /TensorPy/classify.py
+COPY third_party/docker/docker_install.sh /TensorPy/docker_install.sh
 COPY requirements.txt /TensorPy/
 COPY setup.py /TensorPy/
 COPY tensorpy /TensorPy/tensorpy/
 COPY examples /TensorPy/examples/
-COPY sample_images /TensorPy/sample_images/
-COPY test_classify_image.sh /TensorPy/
-COPY docker /TensorPy/docker/
-COPY docker/run_docker_test.sh /TensorPy/
-RUN cd /TensorPy && ls && ./docker/docker_install.sh
+COPY third_party/docker /TensorPy/third_party/docker/
+COPY third_party/docker/run_docker_test.sh /TensorPy/
+RUN cd /TensorPy && ls && ./third_party/docker/docker_install.sh
 RUN cd /TensorPy && pip install -r requirements.txt
 
 #===================
 # Create entrypoint 
 #===================
-COPY docker/docker-entrypoint.sh /
+COPY third_party/docker/docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/bin/bash"]
