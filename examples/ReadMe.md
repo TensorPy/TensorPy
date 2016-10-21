@@ -3,13 +3,15 @@
 (NOTE: If you didn't install TensorFlow and TensorPy properly from the README instructions, these scripts won't work.)
 
 ```bash
-./run_test_classify.sh
+./test_classify_image.sh
+
+./test_classify_page.sh
 ```
 
-You can also run the Python code directly:
+You can also classify images in a Python program:
 
 ```bash
-python test_classify.py
+python test_python_classify.py
 ```
 
-(NOTE: If you see any ``*.pyc`` files appear as you run tests, that's perfectly normal. Compiled bytecode is a natural result of running Python code.)
+(NOTE: If you see any ``*.pyc`` files appear as you run tests, that is compiled bytecode, which is a natural result of running Python code.)
