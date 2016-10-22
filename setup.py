@@ -18,7 +18,7 @@ setup(
     install_requires=[
         'requests==2.11.1',
         'six==1.10.0',
-        'Pillow==3.4.1',
+        'Pillow==3.4.2',
         'BeautifulSoup==3.2.1',
     ],
     packages=['tensorpy'],
