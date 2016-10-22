@@ -1,5 +1,5 @@
 # TensorPy
-![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_p.png "TensorPy")
+![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_4_p.png "TensorPy")
 
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/TensorPy/TensorPy/blob/master/LICENSE) [![Join the chat at https://gitter.im/TensorPy/Lobby](https://badges.gitter.im/TensorPy/TensorPy.svg)](https://gitter.im/TensorPy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
@@ -38,7 +38,7 @@ The **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)*
 Classify a single image from a URL:
 
 ```bash
-classify "https://raw.githubusercontent.com/TensorPy/TensorPy/master/examples/images/happy_animal.jpg"
+classify "http://cdn2.hubspot.net/hubfs/100006/happy_animal.jpg"
 ```
 
 Classify all images on a web page:
