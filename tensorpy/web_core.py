@@ -35,7 +35,7 @@ def rebuild_source(source, full_base_url):
 def get_content_type(url):
     content = requests.get(url)
     content_type = content.headers['Content-Type']
-    if 'text/html' in content_type:
+    if 'html' in content_type:
         return 'html'
     elif 'image/jpeg' in content_type or 'image/png' in content_type:
         return 'image'
