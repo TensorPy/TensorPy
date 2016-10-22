@@ -18,6 +18,6 @@ then
 else
   echo "Incompatible machine for TensorFlow. Exiting script..."
 fi
-echo "Downloading ImageNet (image database for classifying images)..."
+echo "Downloading ImageNet Inception DB (for classifying images)..."
 python tensorpy/download_imagenet.py
 exit
