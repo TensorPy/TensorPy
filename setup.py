@@ -8,7 +8,7 @@ from setuptools import setup, find_packages  # noqa
 
 setup(
     name='tensorpy',
-    version='1.0.7',
+    version='1.0.8',
     url='http://tensorpy.com',
     author='Michael Mintz',
     author_email='@mintzworld',
@@ -18,7 +18,7 @@ setup(
     install_requires=[
         'requests==2.11.1',
         'six==1.10.0',
-        'Pillow==3.4.1',
+        'Pillow==3.4.2',
         'BeautifulSoup==3.2.1',
     ],
     packages=['tensorpy'],
