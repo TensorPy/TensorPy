@@ -8,13 +8,13 @@ value="$(uname)"
 if [ $value == "Linux" ]
 then
   echo "Initializing TensorFlow setup on a Linux machine..."
-  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-0.12.0rc1-cp27-none-linux_x86_64.whl
-  pip install $TF_BINARY_URL
+  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.0.0-cp34-cp34m-linux_x86_64.whl
+  pip install --ignore-installed --upgrade $TF_BINARY_URL
 elif [ $value == "Darwin" ]
 then
   echo "Initializing TensorFlow setup on a MAC..."
-  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-0.12.0rc1-py2-none-any.whl
-  pip install $TF_BINARY_URL
+  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py2-none-any.whl
+  pip install --ignore-installed --upgrade $TF_BINARY_URL
 else
   echo "Incompatible machine for TensorFlow. Exiting script..."
 fi
