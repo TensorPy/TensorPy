@@ -1,6 +1,6 @@
 """ Simple image classification with Inception. """
 # This is a modified version of the following file:
-# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/models/image/imagenet/classify_image.py  # noqa
+# https://github.com/tensorflow/models/blob/master/tutorials/image/imagenet/classify_image.py  # noqa
 
 from __future__ import absolute_import
 from __future__ import division
@@ -11,7 +11,9 @@ import numpy as np
 from tensorpy import settings
 import tensorflow as tf
 
+os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 FLAGS = tf.app.flags.FLAGS
+tf.logging.set_verbosity(tf.logging.ERROR)
 tf.app.flags.DEFINE_string(
     'model_dir', settings.IMAGENET_FOLDER,
     """Path to classify_image_graph_def.pb, """
@@ -21,7 +23,6 @@ tf.app.flags.DEFINE_string('image_file', '',
                            """Absolute path to image file.""")
 tf.app.flags.DEFINE_integer('num_top_predictions', 1,
                             """Display this many predictions.""")
-external_run = False
 
 
 class NodeLookup(object):
@@ -89,7 +90,7 @@ def create_graph():
         _ = tf.import_graph_def(graph_def, name='')  # noqa
 
 
-def run_inference_on_image(image):
+def run_inference_on_image(image, external_run=False):
     if not tf.gfile.Exists(image):
         tf.logging.fatal('File does not exist %s', image)
     image_data = tf.gfile.FastGFile(image, 'rb').read()
@@ -120,7 +121,7 @@ def main(_):
 
 
 def external_run(image):
-    best_guess = run_inference_on_image(image)
+    best_guess = run_inference_on_image(image, external_run=True)
     return best_guess
 
 
