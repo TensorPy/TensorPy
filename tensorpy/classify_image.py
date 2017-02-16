@@ -21,7 +21,6 @@ tf.app.flags.DEFINE_string('image_file', '',
                            """Absolute path to image file.""")
 tf.app.flags.DEFINE_integer('num_top_predictions', 1,
                             """Display this many predictions.""")
-external_run = False
 
 
 class NodeLookup(object):
@@ -120,7 +119,7 @@ def main(_):
 
 
 def external_run(image):
-    best_guess = run_inference_on_image(image)
+    best_guess = run_inference_on_image(image, external_run=True)
     return best_guess
 
 
