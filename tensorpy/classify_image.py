@@ -90,7 +90,7 @@ def create_graph():
         _ = tf.import_graph_def(graph_def, name='')  # noqa
 
 
-def run_inference_on_image(image):
+def run_inference_on_image(image, external_run=False):
     if not tf.gfile.Exists(image):
         tf.logging.fatal('File does not exist %s', image)
     image_data = tf.gfile.FastGFile(image, 'rb').read()
