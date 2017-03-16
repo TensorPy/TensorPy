@@ -92,13 +92,14 @@ def main():
                 pool.join()
             else:
                 # Single-threading the image classification work
+                min_w_h = settings.MIN_W_H  # Minimum size for classification
                 for image in image_list:
                     web_core.save_file_as(image, "temp_image.png")
                     image_base.convert_image_file_to_jpg(
                         "downloads_folder/temp_image.png")
                     width, height = image_base.get_image_file_dimensions(
                         "downloads_folder/temp_image.jpg")
-                    if width >= 50 and height >= 50:
+                    if width >= min_w_h and height >= min_w_h:
                         best_guess = classify_image.external_run(
                             "downloads_folder/temp_image.jpg")
                         if images_classified == 0:
@@ -117,7 +118,7 @@ def main():
 
             if images_classified == 0:
                 print("\nCould not find images to classify on the page! "
-                      "(Min size = %dx%d)" % (
+                      "(Min size = %dx%d pixels)" % (
                         settings.MIN_W_H, settings.MIN_W_H))
             print("")
         else:
