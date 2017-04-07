@@ -4,7 +4,9 @@
 
 **Easy Image Classification with TensorFlow**
 
-[![TensorPy Tutorial](http://img.youtube.com/vi/lVtzaHcUE7Q/3.jpg)](https://www.youtube.com/watch?v=lVtzaHcUE7Q "TensorPy Tutorial") (**[Watch the 2-minute tutorial](https://www.youtube.com/watch?v=lVtzaHcUE7Q)**)
+[![TensorPy Tutorial](http://img.youtube.com/vi/lVtzaHcUE7Q/3.jpg)](https://www.youtube.com/watch?v=lVtzaHcUE7Q "TensorPy Tutorial")
+(**[Watch the 2-minute tutorial on YouTube](https://www.youtube.com/watch?v=lVtzaHcUE7Q)**)
+Now runs **much faster** since video released!
 
 You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python programs. **[TensorFlow](https://www.tensorflow.org/)** does all the image-recognition work. TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** for details).
 
