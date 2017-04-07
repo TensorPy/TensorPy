@@ -53,7 +53,7 @@ Classify all images on a web page:
 classify "https://github.com/TensorPy/TensorPy/tree/master/examples/images"
 ```
 
-Classify a single image from a URL from within a Python program: (See **[test_python_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_classify.py)** for details.)
+Classify a single image URL from a Python script: (See **[test_python_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_classify.py)** for details.)
 
 ```bash
 cd examples
