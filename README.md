@@ -2,7 +2,7 @@
 
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![GitHub stars](https://img.shields.io/github/stars/TensorPy/TensorPy.svg "GitHub stars")](https://github.com/TensorPy/TensorPy/stargazers) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/TensorPy/TensorPy/blob/master/LICENSE) [![Join the chat at https://gitter.im/TensorPy/Lobby](https://badges.gitter.im/TensorPy/TensorPy.svg)](https://gitter.im/TensorPy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-**Image Classification with TensorFlow made easy!**
+**Easy Image Classification with TensorFlow**
 
 [![TensorPy Tutorial](http://img.youtube.com/vi/lVtzaHcUE7Q/3.jpg)](https://www.youtube.com/watch?v=lVtzaHcUE7Q "TensorPy Tutorial") (**[Watch the 2-minute tutorial](https://www.youtube.com/watch?v=lVtzaHcUE7Q)**)
 
