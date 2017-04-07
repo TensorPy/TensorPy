@@ -42,4 +42,5 @@ def maybe_download_and_extract():
 def main(_):
     maybe_download_and_extract()
 
+
 tf.app.run()

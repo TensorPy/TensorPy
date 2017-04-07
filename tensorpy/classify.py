@@ -125,5 +125,6 @@ def main():
             raise Exception(
                 "Unexpected content type %s. Fix the code!" % content_type)
 
+
 if __name__ == "__main__":
     main()
