@@ -8,7 +8,7 @@
 ./test_classify_page.sh
 ```
 
-You can also classify images in a Python program:
+You can also perform classifications from Python scripts:
 
 ```bash
 python test_python_classify.py
