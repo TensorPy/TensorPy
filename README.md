@@ -1,4 +1,4 @@
-# ![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_4_p.png "TensorPy") TensorPy
+# TensorPy ![](http://cdn2.hubspot.net/hubfs/100006/images/tensorpy_logo_4_p.png "TensorPy")
 
 [![pypi](https://img.shields.io/pypi/v/tensorpy.svg)](https://pypi.python.org/pypi/tensorpy) [![GitHub stars](https://img.shields.io/github/stars/TensorPy/TensorPy.svg "GitHub stars")](https://github.com/TensorPy/TensorPy/stargazers) [![Python version](https://img.shields.io/badge/python-2.7-22AADD.svg "Python version")](https://docs.python.org/2/) [![MIT License](http://img.shields.io/badge/license-MIT-22BBCC.svg "MIT License")](https://github.com/TensorPy/TensorPy/blob/master/LICENSE) [![Join the chat at https://gitter.im/TensorPy/Lobby](https://badges.gitter.im/TensorPy/TensorPy.svg)](https://gitter.im/TensorPy/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
