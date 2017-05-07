@@ -1,6 +1,6 @@
 """ Downloading the ImageNet Inception database. """
-# This is a modified version of the following file:
-# https://github.com/tensorflow/tensorflow/blob/master/tensorflow/models/image/imagenet/classify_image.py  # noqa
+# This file is based on:
+# https://github.com/tensorflow/models/blob/master/tutorials/image/imagenet/classify_image.py  # noqa
 
 import os
 import sys
