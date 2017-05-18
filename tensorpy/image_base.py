@@ -1,7 +1,11 @@
 import os
 import requests
+import shutil
+import sys
 import uuid
 from BeautifulSoup import BeautifulSoup
+from os import listdir
+from os.path import isfile, join
 from PIL import Image
 from StringIO import StringIO
 from tensorpy import classify_image
@@ -93,6 +97,41 @@ def get_image_classification(image_url):
               downloads_folder + "/temp_image_jpg.jpg")
 
     return best_guess.strip()
+
+
+def classify_local_image(file_path):
+    if not file_path.endswith('.jpg') and not file_path.endswith('.png'):
+        raise Exception("Expecting a .jpg or .png file!")
+    downloads_folder = settings.DOWNLOADS_FOLDER
+    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name_png = hex_name + '.png'
+    hex_name_jpg = hex_name + '.jpg'
+    shutil.copy2(file_path, os.path.join(downloads_folder, hex_name_png))
+    convert_image_file_to_jpg(
+        "%s/%s" % (downloads_folder, hex_name_png))
+    os.rename(downloads_folder + "/" + hex_name_png,
+              downloads_folder + "/temp_image_png.png")
+    best_guess = classify_image.external_run(
+            "%s/%s" % (downloads_folder, hex_name_jpg))
+    os.rename(downloads_folder + "/" + hex_name_jpg,
+              downloads_folder + "/temp_image_jpg.jpg")
+    return best_guess
+
+
+def classify_folder_images(folder_path):
+    classified_images = []
+    files = [f for f in listdir(folder_path) if isfile(join(folder_path, f))]
+    images = [f for f in files if (f.endswith('.jpg') or f.endswith('.png'))]
+    total = len(images)
+    counter = 0
+    for image in images:
+        counter += 1
+        sys.stdout.write("\rClassifying Image %d of %s..." % (counter, total))
+        sys.stdout.flush()
+        classified_images.append(
+            classify_local_image(os.path.join(folder_path, image)))
+    sys.stdout.write("\rAll classifications have been completed!\n")
+    return classified_images
 
 
 def classify(image_url):
