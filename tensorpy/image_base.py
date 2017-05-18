@@ -118,8 +118,9 @@ def classify_local_image(file_path):
     return best_guess
 
 
-def classify_folder_images(folder_path):
-    classified_images = []
+def classify_folder_images(folder_path, return_dict=False):
+    classified_images_list = []
+    classified_images_dict = {}
     files = [f for f in listdir(folder_path) if isfile(join(folder_path, f))]
     images = [f for f in files if (f.endswith('.jpg') or f.endswith('.png'))]
     total = len(images)
@@ -128,10 +129,13 @@ def classify_folder_images(folder_path):
         counter += 1
         sys.stdout.write("\rClassifying Image %d of %s..." % (counter, total))
         sys.stdout.flush()
-        classified_images.append(
-            classify_local_image(os.path.join(folder_path, image)))
+        result = classify_local_image(os.path.join(folder_path, image))
+        classified_images_list.append(result)
+        classified_images_dict[image] = result
     sys.stdout.write("\rAll classifications have been completed!\n")
-    return classified_images
+    if return_dict:
+        return classified_images_dict
+    return classified_images_list
 
 
 def classify(image_url):
