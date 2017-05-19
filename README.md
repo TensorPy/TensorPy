@@ -78,11 +78,18 @@ cd examples
 python test_python_file_classify.py
 ```
 
-Classify all images in a local folder using a Python script: (See **[test_python_folder_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_folder_classify.py)** for details.)
+Classify all images in a local folder using a Python script (Output = LIST): (See **[test_python_folder_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_folder_classify.py)** for details.)
 
 ```bash
 cd examples
 python test_python_folder_classify.py
+```
+
+Classify all images in a local folder using a Python script (Output = DICTIONARY): (See **[test_python_folder_classify_dict.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_folder_classify_dict.py)** for details.)
+
+```bash
+cd examples
+python test_python_folder_classify_dict.py
 ```
 
 ____________
