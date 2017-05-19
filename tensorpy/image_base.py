@@ -5,7 +5,7 @@ import sys
 import uuid
 from BeautifulSoup import BeautifulSoup
 from os import listdir
-from os.path import isfile, join
+from os.path import isdir, isfile, join
 from PIL import Image
 from StringIO import StringIO
 from tensorpy import classify_image
@@ -79,27 +79,31 @@ def get_all_images_on_page(page_url):
     return image_url_list
 
 
-def get_image_classification(image_url):
+def classify_image_url(image_url):
+    """ Classify an image from a URL. """
     downloads_folder = settings.DOWNLOADS_FOLDER
     hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
-
     web_core.save_file_as(image_url, hex_name_png)
     convert_image_file_to_jpg(
         "%s/%s" % (downloads_folder, hex_name_png))
     os.rename(downloads_folder + "/" + hex_name_png,
               downloads_folder + "/temp_image_png.png")
-
     best_guess = classify_image.external_run(
             "%s/%s" % (downloads_folder, hex_name_jpg))
     os.rename(downloads_folder + "/" + hex_name_jpg,
               downloads_folder + "/temp_image_jpg.jpg")
-
     return best_guess.strip()
 
 
+def get_image_classification(image_url):
+    # Keep original method name for backwards-compatibility
+    return classify_image_url(image_url)
+
+
 def classify_local_image(file_path):
+    """ Classify an image from a local file path. """
     if not file_path.endswith('.jpg') and not file_path.endswith('.png'):
         raise Exception("Expecting a .jpg or .png file!")
     downloads_folder = settings.DOWNLOADS_FOLDER
@@ -119,6 +123,7 @@ def classify_local_image(file_path):
 
 
 def classify_folder_images(folder_path, return_dict=False):
+    """ Classify all images from a local folder. """
     classified_images_list = []
     classified_images_dict = {}
     files = [f for f in listdir(folder_path) if isfile(join(folder_path, f))]
@@ -138,6 +143,16 @@ def classify_folder_images(folder_path, return_dict=False):
     return classified_images_list
 
 
-def classify(image_url):
-    """ A shorter method name for get_image_classification() """
-    return get_image_classification(image_url)
+def classify(image_url_or_path):
+    """ Classify an image from a URL or local file path.
+        If a local folder is provided, all images in the folder
+        will be classified. """
+    is_valid_url = web_core.is_valid_url(image_url_or_path)
+    if is_valid_url:
+        return classify_image_url(image_url_or_path)
+    elif isfile(image_url_or_path):
+        return classify_local_image(image_url_or_path)
+    elif isdir(image_url_or_path):
+        return classify_folder_images(image_url_or_path, return_dict=True)
+    else:
+        raise Exception("Expecting an image URL, file path, or folder path!")

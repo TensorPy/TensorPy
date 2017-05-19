@@ -3,6 +3,7 @@ import sys
 import threading
 import uuid
 from multiprocessing.dummy import Pool as ThreadPool
+from os.path import isdir, isfile
 from tensorpy import classify_image
 from tensorpy import settings
 from tensorpy import image_base
@@ -70,13 +71,24 @@ def main():
         url = sys.argv[1]
         valid_url = web_core.is_valid_url(url)
         if not valid_url:
-            raise Exception("Error: %s is not a valid URL!" % url)
+            file_path = url
+            if isfile(file_path):
+                best_guess = image_base.classify_local_image(file_path)
+            elif isdir(file_path):
+                best_guess = image_base.classify_folder_images(
+                    file_path, return_dict=True)
+            else:
+                raise Exception("Error: %s is not a valid image path!" % url)
+            print("\n*** Best match classification: ***")
+            print(best_guess)
+            print("")
+            return
         content_type = web_core.get_content_type(url)
         if content_type == 'other':
             raise Exception(
                 "Error: %s does not evaluate to %s" % (url, expected_arg))
         elif content_type == 'image':
-            best_guess = image_base.get_image_classification(url)
+            best_guess = image_base.classify_image_url(url)
             print("\n*** Best match classification: ***")
             print(best_guess)
             print("")
