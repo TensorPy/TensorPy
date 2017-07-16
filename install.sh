@@ -2,7 +2,7 @@
 
 pip install --upgrade pip
 echo "Installing TensorPy..."
-pip install -r requirements.txt
+pip install -r requirements.txt --upgrade
 python setup.py install
 value="$(uname)"
 if [ $value == "Linux" ]

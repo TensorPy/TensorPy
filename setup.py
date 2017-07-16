@@ -8,7 +8,7 @@ from setuptools import setup, find_packages  # noqa
 
 setup(
     name='tensorpy',
-    version='1.0.17',
+    version='1.0.18',
     url='http://tensorpy.com',
     author='Michael Mintz',
     author_email='@mintzworld',
@@ -16,10 +16,10 @@ setup(
     description='Easy Image Classification with TensorFlow!',
     license='The MIT License',
     install_requires=[
-        'requests>=2.13.0',
-        'six>=1.10.0',
-        'Pillow>=4.1.1',
-        'BeautifulSoup>=3.2.1',
+        'requests==2.18.1',
+        'six==1.10.0',
+        'Pillow==4.1.1',
+        'BeautifulSoup==3.2.1',
     ],
     packages=['tensorpy'],
     entry_points={
