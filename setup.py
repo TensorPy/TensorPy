@@ -11,7 +11,7 @@ setup(
     version='1.0.18',
     url='http://tensorpy.com',
     author='Michael Mintz',
-    author_email='@mintzworld',
+    author_email='mdmintz@gmail.com',
     maintainer='Michael Mintz',
     description='Easy Image Classification with TensorFlow!',
     license='The MIT License',
