@@ -22,7 +22,7 @@ def download_and_classify_image(image_url):
     downloads_folder = settings.DOWNLOADS_FOLDER
 
     # Prevent file conflicts by using unique identifiers
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
 
@@ -65,8 +65,8 @@ def main():
     expected_arg = "[A valid PAGE_URL or IMAGE_URL]"
     num_args = len(sys.argv)
     if num_args < 2 or num_args > 2:
-        print "\n* INVALID RUN COMMAND! *  Usage:"
-        print "classify %s\n" % expected_arg
+        print("\n* INVALID RUN COMMAND! *  Usage:")
+        print("classify %s\n" % expected_arg)
     elif num_args == 2:
         url = sys.argv[1]
         valid_url = web_core.is_valid_url(url)
@@ -119,7 +119,7 @@ def main():
                                   "Best match classifications for page images:"
                                   " ***")
                         images_classified += 1
-                        print best_guess
+                        print(best_guess)
                         if images_classified >= settings.MAX_IMAGES_PER_PAGE:
                             break
 

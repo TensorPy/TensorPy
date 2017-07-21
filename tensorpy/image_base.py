@@ -3,11 +3,11 @@ import requests
 import shutil
 import sys
 import uuid
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
+from io import StringIO
 from os import listdir
 from os.path import isdir, isfile, join
 from PIL import Image
-from StringIO import StringIO
 from tensorpy import classify_image
 from tensorpy import settings
 from tensorpy import web_core
@@ -61,10 +61,12 @@ def get_all_images_on_page(page_url):
     full_base_url = prefix + "://" + base_url + "/"
     html = requests.get(page_url)
     completed_source = web_core.rebuild_source(html.text, full_base_url)
-    soup = BeautifulSoup(completed_source)
-    imgs = soup.fetch('img', src=True, onload=None)
+    soup = BeautifulSoup(completed_source, "html.parser")
+    imgs = soup.find_all("img")
     image_url_list = []
     for img in imgs:
+        if not img.has_attr("src") or img.has_attr("onload"):
+            continue
         link = img["src"].split("src=")[-1]
         compact_link = link.split('?')[0]
         if (compact_link.endswith('.png') or compact_link.endswith('.jpg') or
@@ -82,7 +84,7 @@ def get_all_images_on_page(page_url):
 def classify_image_url(image_url):
     """ Classify an image from a URL. """
     downloads_folder = settings.DOWNLOADS_FOLDER
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
     web_core.save_file_as(image_url, hex_name_png)
@@ -107,7 +109,7 @@ def classify_local_image(file_path):
     if not file_path.endswith('.jpg') and not file_path.endswith('.png'):
         raise Exception("Expecting a .jpg or .png file!")
     downloads_folder = settings.DOWNLOADS_FOLDER
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
     shutil.copy2(file_path, os.path.join(downloads_folder, hex_name_png))
