@@ -65,8 +65,8 @@ def main():
     expected_arg = "[A valid PAGE_URL or IMAGE_URL]"
     num_args = len(sys.argv)
     if num_args < 2 or num_args > 2:
-        print "\n* INVALID RUN COMMAND! *  Usage:"
-        print "classify %s\n" % expected_arg
+        print("\n* INVALID RUN COMMAND! *  Usage:")
+        print("classify %s\n" % expected_arg)
     elif num_args == 2:
         url = sys.argv[1]
         valid_url = web_core.is_valid_url(url)
@@ -119,7 +119,7 @@ def main():
                                   "Best match classifications for page images:"
                                   " ***")
                         images_classified += 1
-                        print best_guess
+                        print(best_guess)
                         if images_classified >= settings.MAX_IMAGES_PER_PAGE:
                             break
 
