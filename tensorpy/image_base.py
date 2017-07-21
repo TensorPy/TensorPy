@@ -3,11 +3,11 @@ import requests
 import shutil
 import sys
 import uuid
-from BeautifulSoup import BeautifulSoup
+from bs4 import BeautifulSoup
+from io import StringIO
 from os import listdir
 from os.path import isdir, isfile, join
 from PIL import Image
-from StringIO import StringIO
 from tensorpy import classify_image
 from tensorpy import settings
 from tensorpy import web_core
@@ -61,10 +61,12 @@ def get_all_images_on_page(page_url):
     full_base_url = prefix + "://" + base_url + "/"
     html = requests.get(page_url)
     completed_source = web_core.rebuild_source(html.text, full_base_url)
-    soup = BeautifulSoup(completed_source)
-    imgs = soup.fetch('img', src=True, onload=None)
+    soup = BeautifulSoup(completed_source, "html.parser")
+    imgs = soup.find_all("img")
     image_url_list = []
     for img in imgs:
+        if not img.has_attr("src") or img.has_attr("onload"):
+            continue
         link = img["src"].split("src=")[-1]
         compact_link = link.split('?')[0]
         if (compact_link.endswith('.png') or compact_link.endswith('.jpg') or

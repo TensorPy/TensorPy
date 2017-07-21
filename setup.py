@@ -19,7 +19,7 @@ setup(
         'requests==2.18.1',
         'six==1.10.0',
         'Pillow==4.1.1',
-        'BeautifulSoup==3.2.1',
+        'BeautifulSoup4==4.6.0',
     ],
     packages=['tensorpy'],
     entry_points={
