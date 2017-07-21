@@ -22,7 +22,7 @@ def download_and_classify_image(image_url):
     downloads_folder = settings.DOWNLOADS_FOLDER
 
     # Prevent file conflicts by using unique identifiers
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
 
