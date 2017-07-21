@@ -84,7 +84,7 @@ def get_all_images_on_page(page_url):
 def classify_image_url(image_url):
     """ Classify an image from a URL. """
     downloads_folder = settings.DOWNLOADS_FOLDER
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
     web_core.save_file_as(image_url, hex_name_png)
@@ -109,7 +109,7 @@ def classify_local_image(file_path):
     if not file_path.endswith('.jpg') and not file_path.endswith('.png'):
         raise Exception("Expecting a .jpg or .png file!")
     downloads_folder = settings.DOWNLOADS_FOLDER
-    hex_name = 'temp_image_%s' % uuid.uuid4().get_hex()
+    hex_name = 'temp_image_%s' % uuid.uuid4().hex
     hex_name_png = hex_name + '.png'
     hex_name_jpg = hex_name + '.jpg'
     shutil.copy2(file_path, os.path.join(downloads_folder, hex_name_png))
