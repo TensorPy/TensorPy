@@ -9,7 +9,7 @@
 
 (**[Watch the 2-minute tutorial on YouTube](https://www.youtube.com/watch?v=lVtzaHcUE7Q)**)
 
-Now runs **much faster** since video released!
+(**Upgraded** since that video was released!)
 
 You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python programs. **[TensorFlow](https://www.tensorflow.org/)** does all the real work. TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** and **[python3_install.sh](https://github.com/TensorPy/TensorPy/blob/master/python3_install.sh)** for details).
 
@@ -46,6 +46,8 @@ For **Python 3** users, use **[python3_install.sh](https://github.com/TensorPy/T
 ```
 
 #### **Step 4:** Run the examples
+
+(NOTE: Run times may vary depending on your Internet connection and computer's CPU speed.)
 
 Classify a single image from a URL:
 
