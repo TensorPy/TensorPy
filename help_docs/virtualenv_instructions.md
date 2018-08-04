@@ -1,15 +1,15 @@
 ### Virtual Environment Setup Tutorial
 
-First:
+First, install virtualenv / virtualenvwrapper:
 
 ```bash
-sudo pip install virtualenv
-sudo pip install virtualenvwrapper
+python -m pip install virtualenv
+python -m pip install virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 ```
 
-Next, follow the command depending on the system you're using:
+If you add ``source /usr/local/bin/virtualenvwrapper.sh`` to your local bash file (``~/.bash_profile`` on Mac, ``~/.bashrc`` on Linux), virtualenvwrapper commands will be available to you whenever you open a new command prompt. You can then use the following commands to make those changes active.
 
 Mac users: ``source ~/.bash_profile``
 Linux users: ``source ~/.bashrc``
@@ -28,7 +28,6 @@ deactivate
 
 You can always jump back in later:
 
-(If you're using ``virtualenvwrapper``):
 ```bash
 workon tensorpy
 ```
