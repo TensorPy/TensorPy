@@ -1,5 +1,5 @@
-requests==2.18.1
-six==1.10.0
+requests==2.19.1
+six==1.11.0
 Pillow==4.1.1
 BeautifulSoup4==4.6.0
 -e .

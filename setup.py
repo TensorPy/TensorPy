@@ -16,8 +16,8 @@ setup(
     description='Easy Image Classification with TensorFlow!',
     license='The MIT License',
     install_requires=[
-        'requests==2.18.1',
-        'six==1.10.0',
+        'requests==2.19.1',
+        'six==1.11.0',
         'Pillow==4.1.1',
         'BeautifulSoup4==4.6.0',
     ],
