@@ -34,14 +34,13 @@ COPY requirements.txt /TensorPy/
 COPY setup.py /TensorPy/
 COPY tensorpy /TensorPy/tensorpy/
 COPY examples /TensorPy/examples/
-COPY third_party/docker /TensorPy/third_party/docker/
-COPY third_party/docker/run_docker_test.sh /TensorPy/
+COPY integrations/docker/run_docker_test.sh /TensorPy/
 RUN cd /TensorPy && ls && ./install.sh
 RUN cd /TensorPy && pip install -r requirements.txt
 
 #===================
 # Create entrypoint 
 #===================
-COPY third_party/docker/docker-entrypoint.sh /
+COPY integrations/docker/docker-entrypoint.sh /
 ENTRYPOINT ["/docker-entrypoint.sh"]
 CMD ["/bin/bash"]
