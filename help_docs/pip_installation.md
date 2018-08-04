@@ -1,13 +1,19 @@
 ### Pip Installation Instructions
 
-Ubuntu/Linux
+Ubuntu/Linux:
 
 ```bash
 sudo apt-get install python-pip python-dev
 ```
 
-Mac OS X
+Mac OS X:
 
 ```bash
 sudo easy_install pip
+```
+
+OR
+
+```bash
+python -m pip install -U pip
 ```

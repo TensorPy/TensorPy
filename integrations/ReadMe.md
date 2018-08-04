@@ -1,3 +1,3 @@
-## Third-Party / Integrations
+## Integrations
 
 This folder contains TensorPy integrations

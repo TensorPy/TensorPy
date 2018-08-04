@@ -11,14 +11,14 @@
 
 (**Upgraded** since that video was released!)
 
-You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python programs. **[TensorFlow](https://www.tensorflow.org/)** does all the real work. TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** and **[python3_install.sh](https://github.com/TensorPy/TensorPy/blob/master/python3_install.sh)** for details).
+You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python programs. **[TensorFlow](https://www.tensorflow.org/)** does all the real work. TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** for details).
 
 (Read **[how_tensorpy_works](https://github.com/TensorPy/TensorPy/blob/master/help_docs/how_tensorpy_works.md)** for a detailed explanation of how TensorPy works.)
 
 
 ## Setup Steps for Mac & Ubuntu/Linux
 
-(**Windows & Docker users**: See the **[Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/third_party/docker/ReadMe.md)** for running on a Docker machine. Windows requires Docker to run TensorFlow.)
+(**Windows & Docker users**: See the **[Docker ReadMe](https://github.com/TensorPy/TensorPy/blob/master/integrations/docker/ReadMe.md)** for running on a Docker machine. Windows requires Docker to run TensorFlow.)
 
 #### **Step 1:** Create and activate a virtual environment named "tensorpy"
 
@@ -33,16 +33,10 @@ cd TensorPy
 
 #### **Step 3:** Install TensorPy, TensorFlow, and ImageNet/Inception
 
-For **Python 2.7** users, use **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** to install everything you need.
+Use **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** to install everything you need.
 
 ```bash
 ./install.sh
-```
-
-For **Python 3** users, use **[python3_install.sh](https://github.com/TensorPy/TensorPy/blob/master/python3_install.sh)** to install everything you need.
-
-```bash
-./python3_install.sh
 ```
 
 #### **Step 4:** Run the examples
@@ -80,8 +74,6 @@ classify examples/images/
 ```
 
 #### **Examples in Python programs:**
-
-*(**NOTE**: If you're using Python 3 instead of Python 2.7, replace "``python``" with "``python3``" on the command line.)*
 
 Classify an image from a local file path using a Python script: (See **[test_python_file_classify.py](https://github.com/TensorPy/TensorPy/blob/master/examples/test_python_file_classify.py)** for details.)
 
