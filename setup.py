@@ -5,16 +5,29 @@ The setup package to install TensorPy dependencies.
 """
 
 from setuptools import setup, find_packages  # noqa
+from os import path
+
+
+this_directory = path.abspath(path.dirname(__file__))
+long_description = None
+try:
+    with open(path.join(this_directory, 'README.md'), 'rb') as f:
+        long_description = f.read().decode('utf-8')
+except IOError:
+    long_description = 'Easy Image Classification with TensorFlow!'
 
 setup(
     name='tensorpy',
     version='1.3.0',
-    url='http://tensorpy.com',
+    description='Easy Image Classification with TensorFlow!',
+    long_description=long_description,
+    long_description_content_type='text/markdown',
+    url='https://github.com/TensorPy/TensorPy',
+    platforms=["Linux", "Unix", "Mac OS-X"],
     author='Michael Mintz',
     author_email='mdmintz@gmail.com',
     maintainer='Michael Mintz',
-    description='Easy Image Classification with TensorFlow!',
-    license='The MIT License',
+    license="MIT",
     install_requires=[
         'six',
         'requests==2.20.0',
