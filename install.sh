@@ -8,7 +8,7 @@ value="$(uname)"
 if [ $value = "Linux" ]
 then
   echo "Initializing TensorFlow setup on a Linux machine..."
-  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.9.0-cp27-none-linux_x86_64.whl
+  export TF_BINARY_URL=https://storage.googleapis.com/tensorflow/linux/cpu/tensorflow-1.14.0-cp27-none-linux_x86_64.whl
   pip install --ignore-installed --upgrade $TF_BINARY_URL
 elif [ $value = "Darwin" ]
 then

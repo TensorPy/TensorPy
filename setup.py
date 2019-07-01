@@ -30,8 +30,9 @@ setup(
     license="MIT",
     install_requires=[
         'six',
-        'requests==2.20.0',
-        'Pillow==4.1.1',
+        'tensorflow>=1.14.0',
+        'requests>=2.22.0',
+        'Pillow>=6.0.0',
         'BeautifulSoup4>=4.6.0',
     ],
     packages=['tensorpy'],
