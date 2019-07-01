@@ -43,4 +43,4 @@ def main(_):
     maybe_download_and_extract()
 
 
-tf.app.run()
+tf.compat.v1.app.run()

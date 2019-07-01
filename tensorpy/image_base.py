@@ -26,14 +26,14 @@ def convert_image_file_to_jpg(file_name):
     outfile = f + ".jpg"
     if infile != outfile:
         try:
-            Image.open(infile).convert('RGBA').save(outfile, "JPEG")
+            Image.open(infile).convert('RGB').save(outfile, "JPEG")
         except IOError:
             raise Exception("Cannot convert %s to jpg!" % file_name)
 
 
 def load_image_from_url(image_url):
     response = requests.get(image_url)
-    image = Image.open(StringIO(response.content)).convert('RGBA')
+    image = Image.open(StringIO(response.content)).convert('RGB')
     return image
 
 

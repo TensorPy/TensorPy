@@ -18,7 +18,7 @@ except IOError:
 
 setup(
     name='tensorpy',
-    version='1.3.1',
+    version='1.4.0',
     description='Easy Image Classification with TensorFlow!',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -30,8 +30,9 @@ setup(
     license="MIT",
     install_requires=[
         'six',
-        'requests==2.20.0',
-        'Pillow==4.1.1',
+        'tensorflow>=1.14.0',
+        'requests>=2.22.0',
+        'Pillow>=6.0.0',
         'BeautifulSoup4>=4.6.0',
     ],
     packages=['tensorpy'],
