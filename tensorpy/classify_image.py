@@ -13,7 +13,7 @@ import tensorflow as tf
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '2'
 FLAGS = tf.app.flags.FLAGS
-tf.logging.set_verbosity(tf.logging.ERROR)
+tf.compat.v1.logging.set_verbosity(tf.compat.v1.logging.ERROR)
 tf.app.flags.DEFINE_string(
     'model_dir', settings.IMAGENET_FOLDER,
     """Path to classify_image_graph_def.pb, """
