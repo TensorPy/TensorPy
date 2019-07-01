@@ -18,7 +18,7 @@ except IOError:
 
 setup(
     name='tensorpy',
-    version='1.3.1',
+    version='1.4.0',
     description='Easy Image Classification with TensorFlow!',
     long_description=long_description,
     long_description_content_type='text/markdown',
