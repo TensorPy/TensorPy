@@ -124,9 +124,9 @@ def main():
                             break
 
             if images_classified >= settings.MAX_IMAGES_PER_PAGE:
-                    print("\n(NOTE: Exceeded page classification limit "
-                          "of %d images per URL! Stopping early.)" % (
-                            settings.MAX_IMAGES_PER_PAGE))
+                print("\n(NOTE: Exceeded page classification limit "
+                      "of %d images per URL! Stopping early.)" % (
+                        settings.MAX_IMAGES_PER_PAGE))
 
             if images_classified == 0:
                 print("\nCould not find images to classify on the page! "
