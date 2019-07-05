@@ -14,9 +14,9 @@ from tensorpy import web_core
 
 
 def get_image_file_dimensions(file_name):
-    image = Image.open(file_name)
-    image_dimensions = image.size  # (width, height) tuple
-    return image_dimensions
+    with Image.open(file_name) as image:
+        image_dimensions = image.size  # (width, height) tuple
+        return image_dimensions
 
 
 def convert_image_file_to_jpg(file_name):
@@ -26,15 +26,17 @@ def convert_image_file_to_jpg(file_name):
     outfile = f + ".jpg"
     if infile != outfile:
         try:
-            Image.open(infile).convert('RGB').save(outfile, "JPEG")
+            with Image.open(infile) as image:
+                image.convert('RGB').save(outfile, "JPEG")
         except IOError:
             raise Exception("Cannot convert %s to jpg!" % file_name)
 
 
 def load_image_from_url(image_url):
     response = requests.get(image_url)
-    image = Image.open(StringIO(response.content)).convert('RGB')
-    return image
+    with Image.open(StringIO(response.content)) as image:
+        image.convert('RGB')
+        return image
 
 
 def get_image_dimensions(image):
