@@ -32,7 +32,7 @@ setup(
         'six',
         'tensorflow>=1.14.0',
         'requests>=2.22.0',
-        'Pillow>=6.0.0',
+        'Pillow>=6.1.0',
         'BeautifulSoup4>=4.6.0',
     ],
     packages=['tensorpy'],
