@@ -66,10 +66,11 @@ setup(
     python_requires='>=3.5, <3.8',
     install_requires=[
         'tensorflow==1.15.4',
-        'six>=1.11.0',
-        'requests>=2.18.4',
-        'Pillow==5.4.1',
-        'BeautifulSoup4>=4.6.0',
+        'pip>=20.2.3',
+        'six>=1.15.0',
+        'requests>=2.24.0',
+        'Pillow==7.2.0',
+        'beautifulsoup4==4.9.1',
     ],
     packages=['tensorpy'],
     entry_points={
