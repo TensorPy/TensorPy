@@ -9,7 +9,10 @@
 
 (**[Watch the 2-minute tutorial on YouTube](https://www.youtube.com/watch?v=lVtzaHcUE7Q)**)
 
-(**Upgraded** since that video was released!)
+### Requirements:
+
+* <b>A Mac or Linux machine</b>
+* <b>Python 3.5, 3.6, or 3.7</b>
 
 You can use TensorPy to classify images by simply passing a URL on the command line, or by using TensorPy in your Python programs. **[TensorFlow](https://www.tensorflow.org/)** does all the real work. TensorPy also simplifies TensorFlow installation by automating several setup steps into a single script (See **[install.sh](https://github.com/TensorPy/TensorPy/blob/master/install.sh)** for details).
 
