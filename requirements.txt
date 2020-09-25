@@ -1,5 +1,5 @@
-six
-tensorflow==1.14.0
-requests>=2.22.0
-Pillow>=6.1.0
+tensorflow==1.15.4
+six>=1.11.0
+requests>=2.18.4
+Pillow==5.4.1
 BeautifulSoup4>=4.6.0
