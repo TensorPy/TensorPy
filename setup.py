@@ -70,7 +70,7 @@ setup(
         'six>=1.15.0',
         'requests>=2.24.0',
         'Pillow==7.2.0',
-        'beautifulsoup4==4.9.1',
+        'beautifulsoup4==4.9.2',
     ],
     packages=['tensorpy'],
     entry_points={
