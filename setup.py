@@ -48,7 +48,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='tensorpy',
-    version='1.6.0',
+    version='1.6.1',
     description='Easy Image Classification with TensorFlow!',
     long_description=long_description,
     long_description_content_type='text/markdown',
