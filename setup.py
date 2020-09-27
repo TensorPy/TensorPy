@@ -48,7 +48,7 @@ if sys.argv[-1] == 'publish':
 
 setup(
     name='tensorpy',
-    version='1.6.0',
+    version='1.6.1',
     description='Easy Image Classification with TensorFlow!',
     long_description=long_description,
     long_description_content_type='text/markdown',
@@ -70,7 +70,7 @@ setup(
         'six>=1.15.0',
         'requests>=2.24.0',
         'Pillow==7.2.0',
-        'beautifulsoup4==4.9.1',
+        'beautifulsoup4==4.9.2',
     ],
     packages=['tensorpy'],
     entry_points={
